@@ -9,10 +9,7 @@ function App() {
   const [modalShow, setModalShow] = useState(false);
 
   const addSelectedMovies = (moviesData) => {
-    console.log("APP");
-    console.log(moviesData);
     setMovies((prev) => [...prev, ...moviesData]);
-    console.log(movies);
   };
   return (
     <>
