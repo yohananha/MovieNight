@@ -8,7 +8,7 @@ class AddMovieForm extends React.Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const resp = await axios.get(
-      `http://www.omdbapi.com/?s=${this.state.movieName}&type=movie&apikey=${process.env.REACT_APP_OMDB_API_KEY}`
+      `https://www.omdbapi.com/?s=${this.state.movieName}&type=movie&apikey=${process.env.REACT_APP_OMDB_API_KEY}`
     );
     console.log("Form");
     console.log(resp.data);
