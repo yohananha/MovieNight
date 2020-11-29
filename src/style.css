@@ -1,0 +1,23 @@
+h1 {
+  margin: auto;
+}
+.movie-list {
+  margin: 1em;
+  padding: 1em;
+}
+.movie-card {
+  margin: 1em;
+  padding: 1em;
+}
+Button {
+  margin: 1em;
+}
+
+.info {
+  display: inline-block;
+  margin-left: 12px;
+}
+.name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
