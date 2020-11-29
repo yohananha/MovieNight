@@ -8,9 +8,6 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [modalShow, setModalShow] = useState(false);
 
-  const url =
-    "https://image.freepik.com/free-photo/black-texture-with-brick-wall-background_35257-311.jpg";
-
   const addSelectedMovies = (moviesData) => {
     console.log("APP");
     console.log(moviesData);
