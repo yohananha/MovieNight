@@ -8,6 +8,9 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [modalShow, setModalShow] = useState(false);
 
+  const url =
+    "https://image.freepik.com/free-photo/black-texture-with-brick-wall-background_35257-311.jpg";
+
   const addSelectedMovies = (moviesData) => {
     console.log("APP");
     console.log(moviesData);
@@ -16,8 +19,10 @@ function App() {
   };
   return (
     <>
-      <Jumbotron>
-        <h1 style={{ textAlign: "center" }}>Movie List</h1>
+      <Jumbotron id='banner'>
+        <h1 id='header-text' style={{ textAlign: "center" }}>
+          ערב סרט עם המתבגרת
+        </h1>
         <Button variant='primary' onClick={() => setModalShow(true)}>
           Add Movies
         </Button>
