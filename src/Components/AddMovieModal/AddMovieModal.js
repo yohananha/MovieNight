@@ -8,20 +8,10 @@ function AddMovieModal(props) {
   const [selectedMovies, setSelected] = useState([]);
 
   const addNewMovie = (moviesData) => {
-    console.log("Modal");
-    console.log(moviesData.Search);
     moviesData.Search.map((movie) => setMovies((movies) => [...movies, movie]));
   };
 
-  const handleRemove = (id) => {
-    var array = [...this.state.movies.filter((movie) => movie.imdbID !== id)]; // make a separate copy of the array
-    console.log(array);
-    this.setState({ movies: array });
-  };
-
   const handleClick = (movie) => {
-    console.log("modal");
-    console.log(movie);
     if (selectedMovies.find((movieData) => movieData.imdbID === movie.imdbID))
       setSelected([
         ...selectedMovies.filter(
@@ -33,14 +23,11 @@ function AddMovieModal(props) {
   const clearState = () => {
     setMovies([]);
     setSelected([]);
-    props.onHide();
+    props.onHide(selectedMovies);
   };
 
   const handleCloseNSave = () => {
-    props.addmovies(selectedMovies);
-    clearState();
-  };
-  const handleCancel = () => {
+    props.addSelectedMovies(selectedMovies);
     setMovies([]);
     setSelected([]);
     props.onHide();
@@ -62,7 +49,6 @@ function AddMovieModal(props) {
         {movies.length > 0 && (
           <MovieList
             clickable={true}
-            handleRemove={handleRemove}
             movies={movies}
             handleClick={handleClick}
           />
@@ -70,7 +56,7 @@ function AddMovieModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={handleCloseNSave}>Add</Button>
-        <Button variant='light' onClick={handleCancel}>
+        <Button variant='light' onClick={clearState}>
           cancel
         </Button>
       </Modal.Footer>

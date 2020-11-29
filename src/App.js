@@ -4,7 +4,7 @@ import AddMovieModal from "./Components/AddMovieModal/AddMovieModal";
 import "./style.css";
 import { Jumbotron, Button } from "react-bootstrap";
 
-function App(props) {
+function App() {
   const [movies, setMovies] = useState([]);
   const [modalShow, setModalShow] = useState(false);
 
@@ -25,7 +25,7 @@ function App(props) {
         <AddMovieModal
           show={modalShow}
           onHide={() => setModalShow(false)}
-          addmovies={() => addSelectedMovies}
+          addSelectedMovies={addSelectedMovies}
         />
       </Jumbotron>
       {movies.length > 0 && <MovieList movies={movies} clickable={false} />}
