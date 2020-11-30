@@ -22,8 +22,9 @@ class AddMovieForm extends React.Component {
           <Form.Group>
             <Form.Control
               type='text'
-              placeholder='Search For Movie'
+              placeholder='אנא הכנס את שם הסרט באנגלית'
               value={this.state.movieName}
+              style={{ textAlign: "right" }}
               onChange={(event) =>
                 this.setState({ movieName: event.target.value })
               }
@@ -31,7 +32,7 @@ class AddMovieForm extends React.Component {
             />
           </Form.Group>
           <Button variant='success' type='submit' block>
-            Search
+            חיפוש
           </Button>
         </Form>
       </Container>

@@ -35,29 +35,39 @@ function AddMovieModal(props) {
 
   return (
     <Modal
+      style={{ display: "flex", justifyContent: "center" }}
       {...props}
       size='lg'
       aria-labelledby='contained-modal-title-vcenter'
       centered>
-      <Modal.Header closeButton>
-        <Modal.Title id='contained-modal-title-vcenter'>
-          Search for movies to add
-        </Modal.Title>
+      <Modal.Header
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+        <Modal.Title>הכנס סרט לחיפוש</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <AddMovieForm onSubmit={addNewMovie} />
-        {movies.length > 0 && (
+      <Modal.Body
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+        {movies.length > 0 ? (
           <MovieList
             clickable={true}
             movies={movies}
             handleClick={handleClick}
           />
+        ) : (
+          <AddMovieForm onSubmit={addNewMovie} />
         )}
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={handleCloseNSave}>Add</Button>
+      <Modal.Footer style={{ justifyContent: "left" }}>
+        <Button onClick={handleCloseNSave}>הוספה</Button>
         <Button variant='light' onClick={clearState}>
-          cancel
+          ביטול
         </Button>
       </Modal.Footer>
     </Modal>

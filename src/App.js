@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MovieList from "./Components/MovieList/MovieList";
 import AddMovieModal from "./Components/AddMovieModal/AddMovieModal";
 import "./style.css";
-import { Jumbotron, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -13,21 +13,22 @@ function App() {
   };
   return (
     <>
-      <Jumbotron id='banner'>
-        <h1 id='header-text' style={{ textAlign: "center" }}>
-          ערב סרט עם המתבגרת
-        </h1>
-        <Button variant='primary' onClick={() => setModalShow(true)}>
+      <div className='sky-gradient sky-gradient-04"'>
+        {" "}
+        <h1 id='header-text'>ערב סרט עם המתבגרת</h1>{" "}
+        <Button
+          variant='outline-light'
+          onClick={() => setModalShow(true)}
+          style={{ marginLeft: "2rem" }}>
           Add Movies
         </Button>
-
         <AddMovieModal
           show={modalShow}
           onHide={() => setModalShow(false)}
           addSelectedMovies={addSelectedMovies}
         />
-      </Jumbotron>
-      {movies.length > 0 && <MovieList movies={movies} clickable={false} />}
+        {movies.length > 0 && <MovieList movies={movies} clickable={false} />}
+      </div>
     </>
   );
 }

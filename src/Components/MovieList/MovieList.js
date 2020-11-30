@@ -7,7 +7,14 @@ const MovieList = (props) => {
   };
 
   return (
-    <CardColumns className='movie-list'>
+    <CardColumns
+      className='movie-list justify-content-center'
+      style={{
+        margin: "auto",
+        width: "100%",
+        justifyItems: "center",
+        alignItems: "center",
+      }}>
       {props.movies.map((movie) => (
         <Movie
           clickable={props.clickable}

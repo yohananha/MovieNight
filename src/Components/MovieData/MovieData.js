@@ -1,4 +1,4 @@
-import { Col, Row, Card, Container } from "react-bootstrap";
+import { Col, Row, Card } from "react-bootstrap";
 import { useState } from "react";
 
 function Movie(props) {
@@ -27,14 +27,12 @@ function Movie(props) {
         alt={props.Title}
       />
       <Card.Body className='info'>
-        <Container>
-          <Row>
-            <Col>
-              <Card.Title className='title'>{props.Title}</Card.Title>
-              <Card.Text className='year'>{props.Year}</Card.Text>
-            </Col>
-          </Row>
-        </Container>
+        <Row>
+          <Col>
+            <Card.Title className='title'>{props.Title}</Card.Title>
+            <Card.Text className='year'>{props.Year}</Card.Text>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );
